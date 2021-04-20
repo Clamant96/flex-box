@@ -1,0 +1,256 @@
+/* insere no projeto um fonte vindo do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;500;600;700;800;900&display=swap');
+
+/* retira o padding e margin globais da pagina para evitar espacamentos desnecessarios */
+* {
+    padding: 0;
+    margin: 0;  
+
+}
+
+/* DEFININDO CONFIGURACOES GLOBAIS */
+html, body {
+    color: var(--text-black); /* utilizando variavel global 'var()' */
+
+    font-family: 'Vollkorn', serif; /* Configuracao de fonte padrao */
+    font-size: 1.5rem; /* 'rem' Utiliza como referencia a TAG mae onde o elemento se encontra */
+    font-weight: 700; /* Configura um peso na letra 'bold' */
+
+}
+
+/* CRIANDO CORES GLOBAIS */
+:root {
+    /* define variaveis padroes de cores */
+    --text-black: #262626;
+
+    --background-header: #d64d4da4;
+    --background-section: #4498dda4;
+    --background-footer: #44dd6fa4;
+    --background-nav: #00ffff;
+    --background-div: #dd9d44;
+    --background-logo: #566cd1;
+    --background-menu: #2eb984;
+    --background-subDiv: rgb(126, 211, 29);
+
+    /* CORES TRANSPARENTES */
+    --tranparente: #282c4ea0;
+
+}
+
+/* retira a barra lateral da pagina, denxando uma viewr mais limpa */
+::-webkit-scrollbar {
+    display: none;
+
+}
+
+/* CONFIGURACAO HEADER */
+header {
+    background-color: var(--background-header); /* insere uma cor de fundo de um objeto por meio de uma variavel global */
+
+    background-image: url(../img/background-cta-test-3.svg); /* adicionando uma imagem pelo css, vc deve voltar a pasta utilizando os '../' 2 pontos */
+    background-position: center; /* alinha o elemento ao centro do objeto */
+    background-size: 100%; /* forca a imagem a ocupar 100% do objeto */
+    background-repeat: no-repeat; /* faz com que a imagem nao seja relicada */
+
+    width: 100%;
+    height: auto;
+
+    /* CENTRALIZA OBJETOS AO CENTRO */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+/* utiliza o operador para informar que vc quer selecionar somente a TAG filha do objeto */
+header > h1 {
+    font-size: 40px;
+
+    padding: 1% 4%;
+
+    background-color: var(--background-logo);
+
+}
+
+header > div {
+    font-size: 40px;
+
+    padding: 1% 15%;
+
+    background-color: var(--background-menu);
+
+}
+
+/* CONFIGURACAO SECTION */
+section {
+    background-color: var(--background-section);
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap; /* informa para o css que as divs filhas devem pular de linha, quando atingirem o tamanho do 'width' do objeto mae */
+
+}
+
+/* CONFIGURACAO DIV */
+section #container {
+    width: 80%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+}
+
+section #container > div {
+    background-color: var(--background-div);
+
+    margin: 1%;
+
+    width: 253.3333px;
+    height: 30vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+}
+
+section #container > div div {
+    margin: 1%;
+
+    width: 48%;
+    height: 47.7%;
+
+    background-color: var(--background-subDiv);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+section #container > #tranparente {
+    background-color: var(--tranparente);
+
+}
+
+section nav {
+    margin: 1%;
+
+    width: 18%;
+    height: 100vh;
+
+    background-color: var(--background-nav);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    bottom: 0;
+
+    position: sticky; /* Faz com que o elemento filho mude de estado fixo ou relativo dependendo da situacao do objeto mae */
+
+}
+
+/* CONFIGURACAO FOOTER */
+footer {
+    background-color: var(--background-footer);
+
+    width: 100%;
+    height: 15vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* APLICACAO DE RESPOSIVIDADE */
+@media(max-width: 720px){ /* configura uma dimensao para tratar uma determinada situacao */
+
+    section #container {
+        width: 100%;
+        height: auto;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        flex-wrap: wrap;
+    
+    }
+
+    section #container > div {
+        background-color: var(--background-div);
+    
+        margin: 1%;
+    
+        width: 100%;
+        height: 30vh;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    }
+    
+    section nav {
+        margin: 1%;
+    
+        width: 100%;
+        height: 100vh;
+    
+        background-color: var(--background-nav);
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        bottom: 0;
+    
+        position: relative;
+    
+    }
+
+    section #container > div div { /* Heranca onde se acessa a div da div */
+        margin: 1%;
+    
+        width: 48%;
+        height: 45.5%;
+    
+        background-color: var(--background-subDiv);
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    }
+
+}
+
+/*
+EXEMPLOS:
+
+@media(min-width: 1024px) {
+}
+
+@media(min-width: 768px) and (max-width: 1023px){
+}
+
+@media(min-width: 361px) and (max-width: 767px){
+}
+
+@media(max-width: 360px){
+}
+
+*/
